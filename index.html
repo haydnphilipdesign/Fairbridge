@@ -21,20 +21,24 @@
             --hover-bg: #ffd700;
         }
         
-        /* Reset and Box Sizing */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
-        /* Body and Global Styles */
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
         body {
             font-family: 'Poppins', Arial, sans-serif;
             line-height: 1.6;
             color: var(--text-color);
             background-color: #f9f9f9;
-            scroll-behavior: smooth; /* Smooth scrolling */
+            scroll-behavior: smooth;
+            font-size: 16px;
         }
 
         .container {
@@ -43,17 +47,14 @@
             padding: 0 20px;
         }
 
-/* Header Styles */
-header {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 1rem;
-    /* position: sticky; */
-    /* top: 0; */
-    z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    animation: slideInDown 1.5s ease-in-out;
-}
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: slideInDown 1.5s ease-in-out;
+        }
 
         @keyframes slideInDown {
             from { transform: translateY(-100%); }
@@ -67,9 +68,9 @@ header {
         }
 
         .logo img {
-            width: 100%; /* The logo will fill its parent container */
-            max-width: 100px; /* Set a maximum width */
-            height: auto; /* Maintain aspect ratio */
+            width: 100%;
+            max-width: 100px;
+            height: auto;
             animation: fadeInUp 1.5s ease-in-out forwards;
         }
 
@@ -94,12 +95,10 @@ header {
             color: var(--accent-color);
         }
 
-        /* Navigation Highlight on Scroll */
         nav ul li a.active {
             border-bottom: 2px solid var(--accent-color);
         }
 
-        /* Hero Section */
         .hero {
             background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('fall-landscape.jpg');
             background-size: cover;
@@ -153,7 +152,6 @@ header {
             transform: scale(1.05);
         }
 
-        /* Section Titles */
         .section-title {
             text-align: center;
             margin: 3rem 0 2rem;
@@ -174,14 +172,13 @@ header {
             transform: translateX(-50%);
         }
 
-        /* Package Section */
         .package-container {
             display: flex;
             justify-content: center;
             gap: 2rem;
         }
 
-            .package {
+        .package {
             text-align: center;
             background-color: var(--light-bg);
             padding: 3rem 2rem;
@@ -220,13 +217,12 @@ header {
             color: var(--accent-color);
         }
 
-        /* Rooms Section */
         .rooms {
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 2rem;
-            animation: fadeInUp 1.5 ease-in-out forwards;
+            animation: fadeInUp 1.5s ease-in-out forwards;
         }
 
         .room {
@@ -265,13 +261,12 @@ header {
             text-transform: uppercase;
         }
 
-        /* Amenities Section */
         .amenities {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
             margin: 3rem 0;
-            animation: fadeInUp 1.5 ease-in-out forwards;
+            animation: fadeInUp 1.5s ease-in-out forwards;
         }
 
         .amenity {
@@ -287,14 +282,13 @@ header {
             background-color: var(--light-bg);
         }
 
-        /* Attractions and Relaxation Sections */
         .attraction, .relaxation {
             margin: 3rem 0;
             background-color: white;
             padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            animation: fadeInUp 1.5 ease-in-out forwards;
+            animation: fadeInUp 1.5s ease-in-out forwards;
         }
 
         .attraction img, .relaxation img {
@@ -309,7 +303,6 @@ header {
             transform: scale(1.05);
         }
 
-        /* Footer Styles */
         footer {
             background-color: var(--primary-color);
             color: white;
@@ -326,6 +319,63 @@ header {
 
         footer a:hover {
             color: white;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 10px;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            .package-container {
+                flex-direction: column;
+            }
+            
+            .room {
+                flex-basis: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .amenities {
+                grid-template-columns: 1fr;
+            }
+
+            body {
+                font-size: 14px;
+            }
+            
+            h2, h3, h4 {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Ensure all images are responsive */
+        img {
+            max-width: 100%;
+            height: auto;
         }
     </style>
 </head>
@@ -351,30 +401,29 @@ header {
         <a href="#packages" class="cta-button">View Packages</a>
     </section>
 
-<section id="packages" class="container">
-  <h3 class="section-title">Our Exclusive Packages</h3>
-  <div class="package-container">
-    <div class="package">
-      <h4>Fall Retreat Package</h4>
-      <ul>
-        <li>2 nights stay in a Deluxe Room</li>
-        <li>Complimentary breakfast and dinner</li>
-        <li>Guided nature walk through the fall foliage</li>
-        <li>Access to the spa and wellness center</li>
-      </ul>
-    </div>
-    <div class="package">
-      <h4>Family Fun Package</h4>
-      <ul>
-        <li>3 nights stay in a Family Suite</li>
-        <li>Discounted tickets to Bushkill Falls</li>
-        <li>Kids' outdoor adventure program</li>
-        <li>Evening bonfire with s'mores</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
+    <section id="packages" class="container">
+        <h3 class="section-title">Our Exclusive Packages</h3>
+        <div class="package-container">
+            <div class="package">
+                <h4>Fall Retreat Package</h4>
+                <ul>
+                    <li>2 nights stay in a Deluxe Room</li>
+                    <li>Complimentary breakfast and dinner</li>
+                    <li>Guided nature walk through the fall foliage</li>
+                    <li>Access to the spa and wellness center</li>
+                </ul>
+            </div>
+            <div class="package">
+                <h4>Family Fun Package</h4>
+                <ul>
+                    <li>3 nights stay in a Family Suite</li>
+                    <li>Discounted tickets to Bushkill Falls</li>
+                    <li>Kids' outdoor adventure program</li>
+                    <li>Evening bonfire with s'mores</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
     <section id="rooms" class="container rooms">
         <div class="room">
@@ -420,9 +469,9 @@ header {
 
     <section id="relaxation" class="container relaxation">
         <h3 class="section-title">Relaxation & Wellness</h3>
-       <img src="indoor-pool.jpg" alt="Indoor Pool">
-            <p>Unwind in our indoor pool, offering a serene environment perfect for relaxation and rejuvenation.</p>
-        </section>
+        <img src="indoor-pool.jpg" alt="Indoor Pool">
+        <p>Unwind in our indoor pool, offering a serene environment perfect for relaxation and rejuvenation.</p>
+    </section>
 
     <footer>
         <p>&copy; 2024 Fairbridge Inn & Suites | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
