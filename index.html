@@ -175,6 +175,11 @@ header {
         }
 
         /* Package Section */
+        .package-container {
+          display: flex;
+          justify-content: space-between;
+        }
+
         .package {
             background-color: var(--light-bg);
             padding: 3rem 2rem;
@@ -344,27 +349,30 @@ header {
         <a href="#packages" class="cta-button">View Packages</a>
     </section>
 
-    <section id="packages" class="container">
-        <h3 class="section-title">Our Exclusive Packages</h3>
-        <div class="package">
-            <h4>Fall Retreat Package</h4>
-            <ul>
-                <li>2 nights stay in a Deluxe Room</li>
-                <li>Complimentary breakfast and dinner</li>
-                <li>Guided nature walk through the fall foliage</li>
-                <li>Access to the spa and wellness center</li>
-            </ul>
-        </div>
-        <div class="package">
-            <h4>Family Fun Package</h4>
-            <ul>
-                <li>3 nights stay in a Family Suite</li>
-                <li>Discounted tickets to Bushkill Falls</li>
-                <li>Kids' outdoor adventure program</li>
-                <li>Evening bonfire with s'mores</li>
-            </ul>
-        </div>
-    </section>
+<section id="packages" class="container">
+  <h3 class="section-title">Our Exclusive Packages</h3>
+  <div class="package-container">
+    <div class="package">
+      <h4>Fall Retreat Package</h4>
+      <ul>
+        <li>2 nights stay in a Deluxe Room</li>
+        <li>Complimentary breakfast and dinner</li>
+        <li>Guided nature walk through the fall foliage</li>
+        <li>Access to the spa and wellness center</li>
+      </ul>
+    </div>
+    <div class="package">
+      <h4>Family Fun Package</h4>
+      <ul>
+        <li>3 nights stay in a Family Suite</li>
+        <li>Discounted tickets to Bushkill Falls</li>
+        <li>Kids' outdoor adventure program</li>
+        <li>Evening bonfire with s'mores</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 
     <section id="rooms" class="container rooms">
         <div class="room">
