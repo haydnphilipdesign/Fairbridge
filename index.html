@@ -4,175 +4,242 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fall Getaway Special - Fairbridge Inn & Suites</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <style>
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
         }
-        .fade-in {
-            animation: fadeIn 0.8s ease-out forwards;
-            opacity: 0;
+        header {
+            background-color: #f4a460;
+            color: white;
+            text-align: center;
+            padding: 1rem;
         }
-        .stagger > * {
-            animation-delay: calc(var(--order) * 0.2s);
+        nav {
+            background-color: #d2691e;
+            padding: 0.5rem;
         }
-        @media (min-width: 1024px) {
-            .lg-container {
-                max-width: 1200px;
-                margin-left: auto;
-                margin-right: auto;
-            }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 1rem;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .hero {
+            text-align: center;
+            background-image: url('fall-landscape.jpg');
+            background-size: cover;
+            color: white;
+            padding: 4rem 0;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #ff6347;
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .package {
+            background-color: #ffe4b5;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+        }
+        .rooms {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .room {
+            flex-basis: 48%;
+            margin-bottom: 2rem;
+        }
+        .amenities {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .amenity {
+            text-align: center;
+            flex-basis: 22%;
+            margin-bottom: 1rem;
+        }
+        .attraction, .relaxation {
+            margin: 2rem 0;
+        }
+        .testimonials {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .testimonial {
+            flex-basis: 48%;
+            margin-bottom: 2rem;
+            background-color: #f0f0f0;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: #d2691e;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
         }
     </style>
 </head>
-<body class="bg-gray-100 font-sans">
-    <header class="bg-cover bg-center h-screen flex items-center justify-center" style="background-image: url('fall-foliage.jpg');">
-        <div class="text-center text-white fade-in">
-            <h1 class="text-5xl md:text-6xl font-bold mb-4">Fall Getaway Special</h1>
-            <p class="text-xl md:text-2xl mb-8">Experience the magic of autumn at Fairbridge Inn & Suites</p>
-            <a href="#book-now" class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-6 rounded-full text-xl transition duration-300">Book Your Fall Stay</a>
-        </div>
+<body>
+    <header>
+        <h1>Fairbridge Inn & Suites</h1>
     </header>
-
-    <main class="container mx-auto px-4 py-12 lg-container">
-        <section id="promotion-details" class="mb-16 fade-in">
-            <h2 class="text-4xl font-bold mb-6 text-center">Autumn Escape Package</h2>
-            <div class="bg-white rounded-lg shadow-lg p-8">
-                <ul class="list-disc list-inside text-lg space-y-4 stagger">
-                    <li style="--order: 1;">20% discount on your room rate</li>
-                    <li style="--order: 2;">Complimentary daily breakfast for two</li>
-                    <li style="--order: 3;">Late checkout until 2 PM</li>
-                    <li style="--order: 4;">Welcome basket with local fall treats</li>
-                    <li style="--order: 5;">Guided fall foliage hike (weekends only)</li>
+    
+    <nav>
+        <ul>
+            <li><a href="#rooms">Rooms</a></li>
+            <li><a href="#amenities">Amenities</a></li>
+            <li><a href="#location">Location</a></li>
+            <li><a href="#book">Book Now</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section class="hero">
+            <h2>Fall Getaway Special</h2>
+            <p>Experience the magic of autumn at Fairbridge Inn & Suites</p>
+            <a href="#book" class="cta-button">Book Your Fall Stay</a>
+        </section>
+        
+        <section class="package">
+            <h3>Autumn Escape Package</h3>
+            <ul>
+                <li>20% discount on your room rate</li>
+                <li>Complimentary daily breakfast for two</li>
+                <li>Late checkout until 2 PM</li>
+                <li>Welcome basket with local fall treats</li>
+                <li>Guided fall foliage hike (weekends only)</li>
+            </ul>
+            <p>Offer valid for stays from September 15th to November 30th. Use promo code FALL2024 when booking.</p>
+        </section>
+        
+        <section id="rooms" class="rooms">
+            <h3>Our Cozy Retreats</h3>
+            <div class="room">
+                <h4>Cozy Room</h4>
+                <p>Relax in our Cozy Room, featuring a queen bed, fireplace, and a stunning view of the fall foliage.</p>
+                <ul>
+                    <li>Queen Bed</li>
+                    <li>Fireplace</li>
+                    <li>Fall Foliage View</li>
                 </ul>
-                <p class="mt-6 text-gray-700">Offer valid for stays from September 15th to November 30th. Use promo code FALL2024 when booking.</p>
+            </div>
+            <div class="room">
+                <h4>Deluxe Suite</h4>
+                <p>Upgrade to our Deluxe Suite for added space, luxury, and a private balcony overlooking the autumn landscape.</p>
+                <ul>
+                    <li>King Bed</li>
+                    <li>Separate Living Area</li>
+                    <li>Private Balcony</li>
+                </ul>
             </div>
         </section>
-
-        <section id="rooms" class="mb-16 fade-in">
-            <h2 class="text-4xl font-bold mb-6 text-center">Our Cozy Retreats</h2>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="cozy-room.jpg" alt="Cozy Room" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2">Cozy Room</h3>
-                        <p class="text-gray-700">Relax in our Cozy Room, featuring a queen bed, fireplace, and a stunning view of the fall foliage.</p>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="deluxe-suite.jpg" alt="Deluxe Suite" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2">Deluxe Suite</h3>
-                        <p class="text-gray-700">Upgrade to our Deluxe Suite for added space, luxury, and a private balcony overlooking the autumn landscape.</p>
-                    </div>
-                </div>
+        
+        <section id="amenities" class="amenities">
+            <h3>Hotel Amenities</h3>
+            <div class="amenity">
+                <h4>Free Wi-Fi</h4>
+            </div>
+            <div class="amenity">
+                <h4>Free Parking</h4>
+            </div>
+            <div class="amenity">
+                <h4>On-site Restaurant</h4>
+            </div>
+            <div class="amenity">
+                <h4>Fitness Center</h4>
             </div>
         </section>
-
-        <section id="bushkill-falls" class="mb-16 fade-in">
-            <h2 class="text-4xl font-bold mb-6 text-center">Explore Bushkill Falls</h2>
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden lg:flex">
-                <img src="bushkill-falls.jpg" alt="Bushkill Falls" class="w-full lg:w-1/2 h-64 lg:h-auto object-cover">
-                <div class="p-8 lg:w-1/2">
-                    <p class="text-lg mb-4">Just minutes from our hotel, discover the breathtaking beauty of Bushkill Falls, known as the "Niagara of Pennsylvania." This natural wonder features a series of eight cascading waterfalls, set against a backdrop of vibrant fall colors.</p>
-                    <ul class="list-disc list-inside text-lg space-y-2 stagger">
-                        <li style="--order: 1;">4 hiking trails of varying difficulty</li>
-                        <li style="--order: 2;">Scenic overlooks and bridges</li>
-                        <li style="--order: 3;">Wildlife viewing opportunities</li>
-                        <li style="--order: 4;">On-site mining maze for kids</li>
-                    </ul>
-                    <p class="mt-4 text-gray-700">Ask our front desk about discounted tickets and guided tours!</p>
-                </div>
+        
+        <section id="location" class="attraction">
+            <h3>Explore Bushkill Falls</h3>
+            <p>Just minutes from our hotel, discover the breathtaking beauty of Bushkill Falls, known as the "Niagara of Pennsylvania." This natural wonder features a series of eight cascading waterfalls, set against a backdrop of vibrant fall colors.</p>
+            <ul>
+                <li>4 hiking trails of varying difficulty</li>
+                <li>Scenic overlooks and bridges</li>
+                <li>Wildlife viewing opportunities</li>
+                <li>On-site mining maze for kids</li>
+            </ul>
+            <p>Ask our front desk about discounted tickets and guided tours!</p>
+        </section>
+        
+        <section class="relaxation">
+            <h3>Year-Round Relaxation</h3>
+            <p>After a day of autumn adventures, unwind in our climate-controlled indoor pool area. Open year-round, our pool offers a perfect retreat regardless of the weather outside.</p>
+            <ul>
+                <li>Heated indoor pool</li>
+                <li>Relaxing hot tub</li>
+                <li>Poolside lounge area</li>
+                <li>Towel service provided</li>
+                <li>Open daily from 6 AM to 10 PM</li>
+            </ul>
+        </section>
+        
+        <section class="testimonials">
+            <h3>Guest Experiences</h3>
+            <div class="testimonial">
+                <blockquote>"Our fall stay at Fairbridge Inn & Suites was unforgettable. The scenery was breathtaking, and the hotel made us feel right at home. We can't wait to come back!"</blockquote>
+                <p>- John & Sarah, New York</p>
+            </div>
+            <div class="testimonial">
+                <blockquote>"We loved our autumn getaway! The kids enjoyed the nearby pumpkin patch and indoor pool, while we appreciated the cozy atmosphere of the hotel."</blockquote>
+                <p>- The Smith Family, New Jersey</p>
             </div>
         </section>
-
-        <section id="indoor-pool" class="mb-16 fade-in">
-            <h2 class="text-4xl font-bold mb-6 text-center">Year-Round Relaxation</h2>
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden lg:flex">
-                <img src="indoor-pool.jpg" alt="Indoor Pool" class="w-full lg:w-1/2 h-64 lg:h-auto object-cover">
-                <div class="p-8 lg:w-1/2">
-                    <p class="text-lg mb-4">After a day of autumn adventures, unwind in our climate-controlled indoor pool area. Open year-round, our pool offers a perfect retreat regardless of the weather outside.</p>
-                    <ul class="list-disc list-inside text-lg space-y-2 stagger">
-                        <li style="--order: 1;">Heated indoor pool</li>
-                        <li style="--order: 2;">Relaxing hot tub</li>
-                        <li style="--order: 3;">Poolside lounge area</li>
-                        <li style="--order: 4;">Towel service provided</li>
-                        <li style="--order: 5;">Open daily from 6 AM to 10 PM</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="testimonials" class="mb-16 fade-in">
-            <h2 class="text-4xl font-bold mb-6 text-center">Guest Experiences</h2>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <p class="text-lg italic mb-4">"Our fall stay at Fairbridge Inn & Suites was unforgettable. The scenery was breathtaking, and the hotel made us feel right at home. We can't wait to come back!"</p>
-                    <p class="font-bold">- John & Sarah, New York</p>
-                </div>
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <p class="text-lg italic mb-4">"We loved our autumn getaway! The kids enjoyed the nearby pumpkin patch and indoor pool, while we appreciated the cozy atmosphere of the hotel."</p>
-                    <p class="font-bold">- The Smith Family, New Jersey</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="book-now" class="text-center fade-in">
-            <h2 class="text-4xl font-bold mb-6">Reserve Your Autumn Escape</h2>
-            <a href="#" class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-6 rounded-full text-xl transition duration-300">Book Now</a>
-            <p class="mt-4 text-gray-700">Or call us at 1-800-FAIRBRIDGE to make your reservation</p>
+        
+        <section id="book">
+            <h3>Reserve Your Autumn Escape</h3>
+            <a href="#" class="cta-button">Book Now</a>
+            <p>Or call us at 1-800-FAIRBRIDGE to make your reservation</p>
         </section>
     </main>
-
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto px-4 lg-container">
-            <div class="flex flex-wrap justify-between">
-                <div class="w-full md:w-1/3 mb-6 md:mb-0">
-                    <h3 class="text-2xl font-bold mb-4">Fairbridge Inn & Suites</h3>
-                    <p>123 Autumn Lane<br>Bushkill, PA 18324</p>
-                </div>
-                <div class="w-full md:w-1/3 mb-6 md:mb-0">
-                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-yellow-500">Rooms & Suites</a></li>
-                        <li><a href="#" class="hover:text-yellow-500">Amenities</a></li>
-                        <li><a href="#" class="hover:text-yellow-500">Local Attractions</a></li>
-                        <li><a href="#" class="hover:text-yellow-500">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="w-full md:w-1/3">
-                    <h3 class="text-xl font-bold mb-4">Connect With Us</h3>
-                    <div class="flex space-x-4">
-                        <a href="#" class="hover:text-yellow-500">Facebook</a>
-                        <a href="#" class="hover:text-yellow-500">Instagram</a>
-                        <a href="#" class="hover:text-yellow-500">Twitter</a>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-8 text-center text-sm">
-                <p>&copy; 2024 Fairbridge Inn & Suites. All rights reserved.</p>
-            </div>
-        </div>
+    
+    <footer>
+        <p>Fairbridge Inn & Suites<br>
+        123 Autumn Lane<br>
+        Bushkill, PA 18324</p>
+        
+        <h4>Quick Links</h4>
+        <ul>
+            <li><a href="#rooms">Rooms & Suites</a></li>
+            <li><a href="#amenities">Amenities</a></li>
+            <li><a href="#location">Local Attractions</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+        
+        <h4>Connect With Us</h4>
+        <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter</a></li>
+        </ul>
+        
+        <p>&copy; 2024 Fairbridge Inn & Suites. All rights reserved.</p>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            const fadeElems = document.querySelectorAll('.fade-in');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.animationPlayState = 'running';
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {threshold: 0.1});
-
-            fadeElems.forEach(elem => {
-                elem.style.animationPlayState = 'paused';
-                observer.observe(elem);
-            });
-        });
-    </script>
 </body>
 </html>
