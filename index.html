@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Enjoy a luxurious fall getaway at Fairbridge Inn & Suites with exclusive packages.">
+    <meta name="keywords" content="hotel, fall getaway, Fairbridge Inn, Bushkill, accommodation">
+    <meta property="og:title" content="Fall Getaway Special - Fairbridge Inn & Suites">
+    <meta property="og:description" content="Experience the magic of autumn with our exclusive offers.">
+    <meta property="og:image" content="fall-landscape.jpg">
+    <meta property="og:url" content="https://www.fairbridgeinn.com">
     <title>Fall Getaway Special - Fairbridge Inn & Suites</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
@@ -351,8 +357,11 @@
         <section id="book" class="booking-widget">
             <h3>Reserve Your Autumn Escape</h3>
             <form class="booking-form">
+                <label for="check-in">Check-in Date:</label>
                 <input type="date" id="check-in" required>
+                <label for="check-out">Check-out Date:</label>
                 <input type="date" id="check-out" required>
+                <label for="guests">Guests:</label>
                 <select id="guests" required>
                     <option value="">Number of Guests</option>
                     <option value="1">1</option>
@@ -360,6 +369,7 @@
                     <option value="3">3</option>
                     <option value="4">4</option>
                 </select>
+                <label for="promo">Promo Code:</label>
                 <input type="text" id="promo" placeholder="Promo Code">
                 <button type="submit" class="cta-button">Check Availability</button>
             </form>
