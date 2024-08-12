@@ -4,122 +4,398 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fall Getaway Special - Fairbridge Inn & Suites</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+        :root {
+            --primary-color: #f4a460;
+            --secondary-color: #d2691e;
+            --accent-color: #ff6347;
+            --text-color: #333;
+            --light-bg: #ffe4b5;
+        }
+        
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            color: #333;
         }
+
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f9f9f9;
+        }
+
         header {
-            background-color: #f4a460;
+            background-color: var(--primary-color);
             color: white;
-            text-align: center;
             padding: 1rem;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        nav {
-            background-color: #d2691e;
-            padding: 0.5rem;
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
         }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
         nav ul {
             list-style-type: none;
-            padding: 0;
-            margin: 0;
             display: flex;
-            justify-content: center;
         }
+
         nav ul li {
-            margin: 0 1rem;
+            margin-left: 1.5rem;
         }
+
         nav ul li a {
             color: white;
             text-decoration: none;
+            transition: color 0.3s ease;
         }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
         main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
+            padding-top: 80px;
         }
+
         .hero {
-            text-align: center;
-            background-image: url('fall-landscape.jpg');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('fall-landscape.jpg');
             background-size: cover;
+            background-position: center;
             color: white;
-            padding: 4rem 0;
+            text-align: center;
+            padding: 8rem 2rem;
         }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
         .cta-button {
             display: inline-block;
-            background-color: #ff6347;
+            background-color: var(--accent-color);
             color: white;
-            padding: 0.5rem 1rem;
+            padding: 0.8rem 2rem;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
+
+        .cta-button:hover {
+            background-color: #ff4500;
+            transform: translateY(-3px);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: var(--secondary-color);
+        }
+
         .package {
-            background-color: #ffe4b5;
-            padding: 2rem;
-            margin: 2rem 0;
+            background-color: var(--light-bg);
+            padding: 3rem 2rem;
+            margin: 3rem 0;
             border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
+
+        .package ul {
+            list-style-type: none;
+            padding-left: 1rem;
+        }
+
+        .package ul li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .package ul li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
         .rooms {
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
+            gap: 2rem;
         }
+
         .room {
-            flex-basis: 48%;
-            margin-bottom: 2rem;
+            flex-basis: calc(50% - 1rem);
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
+
+        .room:hover {
+            transform: translateY(-5px);
+        }
+
+        .room img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .room-content {
+            padding: 1.5rem;
+        }
+
         .amenities {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
         }
+
         .amenity {
             text-align: center;
-            flex-basis: 22%;
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .amenity:hover {
+            transform: translateY(-5px);
+        }
+
+        .amenity i {
+            font-size: 2rem;
+            color: var(--accent-color);
             margin-bottom: 1rem;
         }
+
         .attraction, .relaxation {
-            margin: 2rem 0;
+            margin: 3rem 0;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
+
+        .attraction img, .relaxation img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
         .testimonials {
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
+            gap: 2rem;
+            margin: 3rem 0;
         }
+
         .testimonial {
-            flex-basis: 48%;
+            flex-basis: calc(50% - 1rem);
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .testimonial blockquote {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section {
+            flex-basis: calc(25% - 1rem);
             margin-bottom: 2rem;
-            background-color: #f0f0f0;
-            padding: 1rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style-type: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--accent-color);
+        }
+
+        @media (max-width: 768px) {
+            .room, .testimonial {
+                flex-basis: 100%;
+            }
+
+            .footer-section {
+                flex-basis: 100%;
+            }
+        }
+
+        .booking-widget {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-width: 500px;
+            margin: 3rem auto;
+        }
+
+        .booking-widget h3 {
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .booking-form {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .booking-form input, .booking-form select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
             border-radius: 5px;
         }
-        footer {
-            background-color: #d2691e;
+
+        .booking-form button {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .booking-form button:hover {
+            background-color: #ff4500;
+        }
+
+        #countdown {
+            background-color: var(--accent-color);
             color: white;
             text-align: center;
             padding: 1rem;
-            margin-top: 2rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
         }
     </style>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
-        <h1>Fairbridge Inn & Suites</h1>
+        <div class="header-content">
+            <div class="logo">Fairbridge Inn & Suites</div>
+            <nav>
+                <ul>
+                    <li><a href="#rooms">Rooms</a></li>
+                    <li><a href="#amenities">Amenities</a></li>
+                    <li><a href="#location">Location</a></li>
+                    <li><a href="#book" class="cta-button">Book Now</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     
-    <nav>
-        <ul>
-            <li><a href="#rooms">Rooms</a></li>
-            <li><a href="#amenities">Amenities</a></li>
-            <li><a href="#location">Location</a></li>
-            <li><a href="#book">Book Now</a></li>
-        </ul>
-    </nav>
-    
     <main>
+        <div id="countdown"></div>
+        
         <section class="hero">
             <h2>Fall Getaway Special</h2>
             <p>Experience the magic of autumn at Fairbridge Inn & Suites</p>
@@ -127,7 +403,7 @@
         </section>
         
         <section class="package">
-            <h3>Autumn Escape Package</h3>
+            <h3 class="section-title">Autumn Escape Package</h3>
             <ul>
                 <li>20% discount on your room rate</li>
                 <li>Complimentary daily breakfast for two</li>
@@ -138,46 +414,59 @@
             <p>Offer valid for stays from September 15th to November 30th. Use promo code FALL2024 when booking.</p>
         </section>
         
-        <section id="rooms" class="rooms">
-            <h3>Our Cozy Retreats</h3>
-            <div class="room">
-                <h4>Cozy Room</h4>
-                <p>Relax in our Cozy Room, featuring a queen bed, fireplace, and a stunning view of the fall foliage.</p>
-                <ul>
-                    <li>Queen Bed</li>
-                    <li>Fireplace</li>
-                    <li>Fall Foliage View</li>
-                </ul>
-            </div>
-            <div class="room">
-                <h4>Deluxe Suite</h4>
-                <p>Upgrade to our Deluxe Suite for added space, luxury, and a private balcony overlooking the autumn landscape.</p>
-                <ul>
-                    <li>King Bed</li>
-                    <li>Separate Living Area</li>
-                    <li>Private Balcony</li>
-                </ul>
+        <section id="rooms">
+            <h3 class="section-title">Our Cozy Retreats</h3>
+            <div class="rooms">
+                <div class="room">
+                    <img src="cozy-room.jpg" alt="Cozy Room">
+                    <div class="room-content">
+                        <h4>Cozy Room</h4>
+                        <p>Relax in our Cozy Room, featuring a queen bed, fireplace, and a stunning view of the fall foliage.</p>
+                        <ul>
+                            <li>Queen Bed</li>
+                            <li>Fireplace</li>
+                            <li>Fall Foliage View</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="room">
+                    <img src="deluxe-suite.jpg" alt="Deluxe Suite">
+                    <div class="room-content">
+                        <h4>Deluxe Suite</h4>
+                        <p>Upgrade to our Deluxe Suite for added space, luxury, and a private balcony overlooking the autumn landscape.</p>
+                        <ul>
+                            <li>King Bed</li>
+                            <li>Separate Living Area</li>
+                            <li>Private Balcony</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
         
         <section id="amenities" class="amenities">
-            <h3>Hotel Amenities</h3>
+            <h3 class="section-title">Hotel Amenities</h3>
             <div class="amenity">
+                <i class="fas fa-wifi"></i>
                 <h4>Free Wi-Fi</h4>
             </div>
             <div class="amenity">
+                <i class="fas fa-parking"></i>
                 <h4>Free Parking</h4>
             </div>
             <div class="amenity">
+                <i class="fas fa-utensils"></i>
                 <h4>On-site Restaurant</h4>
             </div>
             <div class="amenity">
+                <i class="fas fa-dumbbell"></i>
                 <h4>Fitness Center</h4>
             </div>
         </section>
         
         <section id="location" class="attraction">
-            <h3>Explore Bushkill Falls</h3>
+            <h3 class="section-title">Explore Bushkill Falls</h3>
+            <img src="bushkill-falls.jpg" alt="Bushkill Falls">
             <p>Just minutes from our hotel, discover the breathtaking beauty of Bushkill Falls, known as the "Niagara of Pennsylvania." This natural wonder features a series of eight cascading waterfalls, set against a backdrop of vibrant fall colors.</p>
             <ul>
                 <li>4 hiking trails of varying difficulty</li>
@@ -189,7 +478,8 @@
         </section>
         
         <section class="relaxation">
-            <h3>Year-Round Relaxation</h3>
+            <h3 class="section-title">Year-Round Relaxation</h3>
+            <img src="indoor-pool.jpg" alt="Indoor Pool">
             <p>After a day of autumn adventures, unwind in our climate-controlled indoor pool area. Open year-round, our pool offers a perfect retreat regardless of the weather outside.</p>
             <ul>
                 <li>Heated indoor pool</li>
@@ -201,7 +491,7 @@
         </section>
         
         <section class="testimonials">
-            <h3>Guest Experiences</h3>
+            <h3 class="section-title">Guest Experiences</h3>
             <div class="testimonial">
                 <blockquote>"Our fall stay at Fairbridge Inn & Suites was unforgettable. The scenery was breathtaking, and the hotel made us feel right at home. We can't wait to come back!"</blockquote>
                 <p>- John & Sarah, New York</p>
@@ -212,34 +502,118 @@
             </div>
         </section>
         
-        <section id="book">
+        <section id="book" class="booking-widget">
             <h3>Reserve Your Autumn Escape</h3>
-            <a href="#" class="cta-button">Book Now</a>
-            <p>Or call us at 1-800-FAIRBRIDGE to make your reservation</p>
+            <form class="booking-form">
+                <input type="date" id="check-in" required>
+                <input type="date" id="check-out" required>
+                <select id="guests" required>
+                    <option value="">Number of Guests</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <input type="text" id="promo" placeholder="Promo Code">
+                <button type="submit">Check Availability</button>
+            </form>
         </section>
     </main>
     
     <footer>
-        <p>Fairbridge Inn & Suites<br>
-        123 Autumn Lane<br>
-        Bushkill, PA 18324</p>
-        
-        <h4>Quick Links</h4>
-        <ul>
-            <li><a href="#rooms">Rooms & Suites</a></li>
-            <li><a href="#amenities">Amenities</a></li>
-            <li><a href="#location">Local Attractions</a></li>
-            <li><a href="#contact">Contact Us</a></li>
-        </ul>
-        
-        <h4>Connect With Us</h4>
-        <ul>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">Twitter</a></li>
-        </ul>
-        
-        <p>&copy; 2024 Fairbridge Inn & Suites. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Fairbridge Inn & Suites</h4>
+                <p>123 Autumn Lane<br>Bushkill, PA 18324</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#rooms">Rooms & Suites</a></li>
+                    <li><a href="#amenities">Amenities</a></li>
+                    <li><a href="#location">Local Attractions</a></li>
+                    <li><a href="#book">Book Now</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>Phone: 1-800-FAIRBRIDGE</p>
+                <p>Email: info@fairbridgeinn.com</p>
+            </div>
+            <div class="footer-section">
+                <h4>Connect With Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 2rem;">&copy; 2024 Fairbridge Inn & Suites. All rights reserved.</p>
     </footer>
+
+    <div id="promoModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Limited Time Offer!</h2>
+            <p>Book now and get an additional 10% off your stay. Use promo code EXTRA10 at checkout.</p>
+            <a href="#book" class="cta-button">Book Now</a>
+        </div>
+    </div>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const now = new Date();
+            const endDate = new Date(now.getFullYear(), 11, 1); // December 1st of current year
+            if (now > endDate) {
+                endDate.setFullYear(endDate.getFullYear() + 1);
+            }
+            const timeLeft = endDate - now;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+
+            document.getElementById('countdown').innerHTML = `Fall Special Ends In: ${days}d ${hours}h ${minutes}m`;
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 60000);
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Promo Modal
+        const modal = document.getElementById("promoModal");
+        const span = document.getElementsByClassName("close")[0];
+
+        setTimeout(() => {
+            modal.style.display = "block";
+        }, 5000);
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Form Submission
+        document.querySelector('.booking-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your booking request. We will confirm your reservation shortly.');
+        });
+    </script>
 </body>
 </html>
